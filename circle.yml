@@ -1,17 +1,8 @@
 machine:
   pre:
    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
-   - curl -sS https://getcomposer.org/installer | sudo php  -- --install-dir=/usr/local/bin --filename=composer
   php:
     version: 7.1.0
-dependencies:
-  cache_directories:
-    - "vendor"
-
-# test:
-#   pre:
-#     - phpunit tests/dummytest.php
 test:
   override:
-   # - vendor/bin/phpunit --bootstrap ./tests/dummytest.php tests
     - phpunit tests/dummytest.php
