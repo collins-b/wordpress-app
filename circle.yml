@@ -1,7 +1,7 @@
 machine:
   pre:
    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
-   - sudo composer selfupdate
+   - curl -sS https://getcomposer.org/installer | sudo php  -- --install-dir=/usr/local/bin --filename=composer
   php:
     version: 7.1.0
 dependencies:
