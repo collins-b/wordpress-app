@@ -14,4 +14,4 @@ dependencies:
 test:
   override:
    # - vendor/bin/phpunit --bootstrap ./tests/dummytest.php tests
-    - composer test
+    - phpunit tests/dummytest.php
