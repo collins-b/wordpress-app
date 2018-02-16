@@ -1,6 +1,6 @@
 <?php
 
-require_once('hello.php');
+require_once('dummy.php');
 use PHPUnit\Framework\TestCase;
 
 class RemoteConnectTest extends TestCase
