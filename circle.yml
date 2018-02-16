@@ -1,9 +1,16 @@
 machine:
+dependencies:
   pre:
-    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
+   - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
+   - sudo composer selfupdate
   php:
     version: 7.1.0
+  cache_directories:
+    - "vendor"
 
+# test:
+#   pre:
+#     - phpunit tests/dummytest.php
 test:
-  pre:
-    - phpunit tests/dummytest.php
+  override:
+    - vendor/bin/phpunit --bootstrap ./tests/dummytest.php tests
