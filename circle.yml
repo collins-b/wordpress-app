@@ -4,6 +4,7 @@ machine:
    - sudo composer selfupdate
   php:
     version: 7.1.0
+dependencies:
   cache_directories:
     - "vendor"
 
