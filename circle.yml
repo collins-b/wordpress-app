@@ -22,13 +22,6 @@ working_directory: ~/workspace
 test:
   override:
     - phpunit tests/dummytest.php
-
-# deployment:
-#   name: Deploy Application
-#   command: |
-#     if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "setup/cd" ]; then
-#       ./deployment.sh
-#     fi
 deployment:
   prod:
     branch: [master, develop]
