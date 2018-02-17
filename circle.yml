@@ -21,9 +21,15 @@ test:
   override:
     - phpunit tests/dummytest.php
 
+# deployment:
+#   name: Deploy Application
+#   command: |
+#     if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "setup/cd" ]; then
+#       ./deployment.sh
+#     fi
 deployment:
-  name: Deploy Application
-  command: |
-    if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "setup/cd" ]; then
-      ./deployment.sh
-    fi
+  prod:
+    branch: setup/cd
+    commands:
+      - sudo chmod +x ./deployment.sh
+      - ./deployment.sh
