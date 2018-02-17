@@ -9,8 +9,8 @@ machine:
     PROJECT_ID: edms-api
     CLUSTER_NAME: wordpress-app
     CLOUDSDK_COMPUTE_ZONE: us-central1-a
-    DEPLOYMENT_NAME: wordpress-app
-    CONTAINER_NAME: wordpress-app
+    DEPLOYMENT_NAME: wordpress
+    CONTAINER_NAME: wordpress
     IMAGE: wordpress-app
     REG_ID: wordpress-app
     IMG_TAG: 0.0.1
