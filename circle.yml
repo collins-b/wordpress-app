@@ -24,6 +24,6 @@ test:
 deployment:
   name: Deploy Application
   command: |
-    if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "develop" ]; then
+    if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "setup/cd" ]; then
       ./deployment.sh
     fi
