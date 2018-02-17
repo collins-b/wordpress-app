@@ -22,8 +22,8 @@ sudo service docker start
 
 docker build -t gcr.io/${PROJECT_ID}/${REG_ID}/wordpress-app:$CIRCLE_SHA1 .
 
-sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_ID}/${REG_ID}/edms:$CIRCLE_SHA1
+sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_ID}/${REG_ID}/wordpress-app:$CIRCLE_SHA1
 
-sudo /opt/google-cloud-sdk/bin/kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=gcr.io/${PROJECT_ID}/${REG_ID}/edms:$CIRCLE_SHA1
+sudo /opt/google-cloud-sdk/bin/kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=gcr.io/${PROJECT_ID}/${REG_ID}/wordpress-app:$CIRCLE_SHA1
 
 echo " Successfully deployed to ${DEPLOYMENT_ENVIRONMENT}"
