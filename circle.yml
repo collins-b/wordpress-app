@@ -8,11 +8,13 @@ machine:
   environment:
     PROJECT_ID: edms-api
     CLUSTER_NAME: wordpress-app
+    CLUSTER_NAME_PROD: wordpress-app-prod
     CLOUDSDK_COMPUTE_ZONE: us-central1-a
     DEPLOYMENT_NAME: wordpress
     CONTAINER_NAME: wordpress
     IMAGE: wordpress-app
     REG_ID: wordpress-app
+    REG_ID_PROD: wordpress-app-prod
     IMG_TAG: 0.0.1
     PROJECT_NAME: wordpress-app
     DEPLOYMENT_ENVIRONMENT: staging
@@ -29,7 +31,7 @@ test:
 #     fi
 deployment:
   prod:
-    branch: setup/cd
+    branch: [master, develop]
     commands:
       - sudo chmod +x ./deployment.sh
       - ./deployment.sh

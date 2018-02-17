@@ -2,6 +2,13 @@
 
 set -e
 
+if [ "$CIRCLE_BRANCH" == 'master' ]; then
+  DEPLOYMENT_ENVIRONMENT="production"
+  ACCOUNT_KEY=$ACCOUNT_KEY_PROD
+  CLUSTER_NAME=$CLUSTER_NAME_PROD
+  REG_ID=$REG_ID_PROD
+fi
+
 echo "Deploying to ${DEPLOYMENT_ENVIRONMENT}"
 
 echo $ACCOUNT_KEY > service_key.txt
